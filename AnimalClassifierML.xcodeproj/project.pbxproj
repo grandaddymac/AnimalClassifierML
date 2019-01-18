@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		D8DD771321F15056003803D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD771221F15056003803D5 /* AppDelegate.swift */; };
-		D8DD771521F15056003803D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD771421F15056003803D5 /* ViewController.swift */; };
+		D8DD771521F15056003803D5 /* ClassifierVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD771421F15056003803D5 /* ClassifierVC.swift */; };
 		D8DD771821F15056003803D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DD771621F15056003803D5 /* Main.storyboard */; };
 		D8DD771A21F15057003803D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8DD771921F15057003803D5 /* Assets.xcassets */; };
 		D8DD771D21F15057003803D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DD771B21F15057003803D5 /* LaunchScreen.storyboard */; };
+		D8DD772521F1523D003803D5 /* RoundedVisualEffecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD772421F1523D003803D5 /* RoundedVisualEffecView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D8DD770F21F15056003803D5 /* AnimalClassifierML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalClassifierML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DD771221F15056003803D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8DD771421F15056003803D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8DD771421F15056003803D5 /* ClassifierVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierVC.swift; sourceTree = "<group>"; };
 		D8DD771721F15056003803D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8DD771921F15057003803D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8DD771C21F15057003803D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8DD771E21F15057003803D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8DD772421F1523D003803D5 /* RoundedVisualEffecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedVisualEffecView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		D8DD771121F15056003803D5 /* AnimalClassifierML */ = {
 			isa = PBXGroup;
 			children = (
+				D8DD772721F1538A003803D5 /* View */,
+				D8DD772621F15383003803D5 /* Controller */,
 				D8DD771221F15056003803D5 /* AppDelegate.swift */,
-				D8DD771421F15056003803D5 /* ViewController.swift */,
 				D8DD771621F15056003803D5 /* Main.storyboard */,
 				D8DD771921F15057003803D5 /* Assets.xcassets */,
 				D8DD771B21F15057003803D5 /* LaunchScreen.storyboard */,
 				D8DD771E21F15057003803D5 /* Info.plist */,
 			);
 			path = AnimalClassifierML;
+			sourceTree = "<group>";
+		};
+		D8DD772621F15383003803D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8DD771421F15056003803D5 /* ClassifierVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D8DD772721F1538A003803D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D8DD772421F1523D003803D5 /* RoundedVisualEffecView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8DD771521F15056003803D5 /* ViewController.swift in Sources */,
+				D8DD771521F15056003803D5 /* ClassifierVC.swift in Sources */,
+				D8DD772521F1523D003803D5 /* RoundedVisualEffecView.swift in Sources */,
 				D8DD771321F15056003803D5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
