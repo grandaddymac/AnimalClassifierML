@@ -32,22 +32,47 @@ class ClassifierVC: UIViewController {
     }()
     
     func processClassifications(for request: VNRequest, error: Error?) {
-        guard let classifications = request.results as? [VNClassificationObservation] else {
-            self.classificationLabel.text = "Unable to classify image. \n\(error?.localizedDescription ?? "Error")"
-            return
-        }
-        if classifications.isEmpty {
-            self.classificationLabel.text = "Nothing recognized."
-        } else {
-            let topClassifications = classifications.prefix(2)
-            let descriptions = topClassifications.map { classification in
-                return String(format: "%.2f", classification.confidence * 100) + "% - " + classification.identifier
+        DispatchQueue.main.async {
+            guard let classifications = request.results as? [VNClassificationObservation] else {
+                self.classificationLabel.text = "Unable to classify image. \n\(error?.localizedDescription ?? "Error")"
+                return
             }
-            
-            self.classificationLabel.text = "Classifications: \n" + descriptions.joined(separator: "\n")
+            if classifications.isEmpty {
+                self.classificationLabel.text = "Nothing recognized."
+            } else {
+                let topClassifications = classifications.prefix(2)
+                let descriptions = topClassifications.map { classification in
+                    return String(format: "%.2f", classification.confidence * 100) + "% - " + classification.identifier
+                }
+                
+                self.classificationLabel.text = "Classifications: \n" + descriptions.joined(separator: "\n")
+            }
         }
     }
 
+    func updateClassifications(for image: UIImage) {
+        classificationLabel.text = "Classifying..."
+        
+        guard let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue)), let ciImage = CIImage(image: image) else {
+            //display error
+            displayError()
+            return
+        }
+        // Don't update UI on background thread
+        DispatchQueue.global(qos: .userInteractive).async {
+            let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
+            do {
+                try handler.perform([self.classificationRequest])
+            } catch {
+                print("Failed to perform classification. \n\(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func displayError() {
+        classificationLabel.text = "Something went wrong... \nPlease try again."
+    }
+    
     @IBAction func cameraButtonPressed(_ sender: Any) {
         //verify device has camera
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
@@ -90,5 +115,6 @@ extension ClassifierVC: UIImagePickerControllerDelegate, UINavigationControllerD
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { fatalError("No image returned") }
         imageView.image = image
         //Use image to make predictions with CoreML model
+        updateClassifications(for: image)
     }
 }
