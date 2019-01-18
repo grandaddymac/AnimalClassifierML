@@ -13,6 +13,7 @@
 		D8DD771A21F15057003803D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8DD771921F15057003803D5 /* Assets.xcassets */; };
 		D8DD771D21F15057003803D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DD771B21F15057003803D5 /* LaunchScreen.storyboard */; };
 		D8DD772521F1523D003803D5 /* RoundedVisualEffecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DD772421F1523D003803D5 /* RoundedVisualEffecView.swift */; };
+		D8DD772921F1583C003803D5 /* AnimalClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D8DD772821F1583C003803D5 /* AnimalClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D8DD771C21F15057003803D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8DD771E21F15057003803D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8DD772421F1523D003803D5 /* RoundedVisualEffecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedVisualEffecView.swift; sourceTree = "<group>"; };
+		D8DD772821F1583C003803D5 /* AnimalClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AnimalClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		D8DD771121F15056003803D5 /* AnimalClassifierML */ = {
 			isa = PBXGroup;
 			children = (
+				D8DD772821F1583C003803D5 /* AnimalClassifier.mlmodel */,
 				D8DD772721F1538A003803D5 /* View */,
 				D8DD772621F15383003803D5 /* Controller */,
 				D8DD771221F15056003803D5 /* AppDelegate.swift */,
@@ -157,6 +160,7 @@
 				D8DD771521F15056003803D5 /* ClassifierVC.swift in Sources */,
 				D8DD772521F1523D003803D5 /* RoundedVisualEffecView.swift in Sources */,
 				D8DD771321F15056003803D5 /* AppDelegate.swift in Sources */,
+				D8DD772921F1583C003803D5 /* AnimalClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
