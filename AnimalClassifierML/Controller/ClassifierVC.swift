@@ -22,7 +22,7 @@ class ClassifierVC: UIViewController {
             let request = VNCoreMLRequest(model: model, completionHandler: { (request, error) in
                 //process classifications
                 self.processClassifications(for: request, error: error)
-            })
+            })  
             // model requires square image
             request.imageCropAndScaleOption = .centerCrop
             return request
